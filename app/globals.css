@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* メインコンテナ */
+.main-container {
+  min-height: 100vh;
+}
+
+/* ヒーローセクション */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #fffbeb, #ffedd5);
+}
+
+.hero-content {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 3.75rem;
+  font-weight: bold;
+  color: #ea580c;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #92400e;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #f97316;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.btn-secondary {
+  border: 2px solid #f97316;
+  color: #ea580c;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #fff7ed;
+  transform: translateY(-2px);
+}
+
+/* 自己紹介セクション */
+.about-section {
+  padding: 5rem 1rem;
+  background-color: white;
+}
+
+.about-container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ea580c;
+}
+
+.about-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* 特徴セクション */
+.features-section {
+  padding: 5rem 1rem;
+  background-color: #fffbeb;
+}
+
+.features-container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.15);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #c2410c;
+}
+
+.feature-description {
+  color: #4b5563;
+}
+
+/* 料金セクション */
+.pricing-section {
+  padding: 5rem 1rem;
+  background-color: white;
+}
+
+.pricing-container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.pricing-box {
+  background-color: #fff7ed;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #fed7aa;
+}
+
+.pricing-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #374151;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fed7aa;
+  padding-bottom: 1rem;
+}
+
+.pricing-item:last-child {
+  border-bottom: none;
+}
+
+.dog-size {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #c2410c;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.price-daytrip {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #78716c;
+}
+
+.price-overnight {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #78716c;
+}
+
+.extra-charges {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #fed7aa;
+}
+
+.extra-charges-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c2410c;
+  margin-bottom: 0.5rem;
+}
+
+.extra-charges-text {
+  font-size: 1rem;
+  color: #78716c;
+}
+
+.pricing-note {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #78716c;
+}
+
+/* お問い合わせセクション */
+.contact-section {
+  padding: 5rem 1rem;
+  background-color: #fffbeb;
+}
+
+.contact-container {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: #78716c;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #c2410c;
+}
+
+.form-input,
+.form-input,
+.form-textarea {
+  width: 90%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #fed7aa;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  margin: 0 auto;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.form-submit {
+  width: 90%;
+  background-color: #f97316;
+  color: white;
+  padding: 0.875rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.form-submit:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
