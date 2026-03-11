@@ -7,7 +7,7 @@ export default function Home() {
           <p className="hero-subtitle">家族のように、大切にお預かりします</p>
           <div className="hero-buttons">
             <a href="#about" className="btn btn-primary">詳しく見る</a>
-            <a href="#contact" className="btn btn-secondary">お問い合わせ</a>
+            <a href="#contact" className="btn btn-secondary">お問い合わせ </a>
           </div>
         </div>
       </section>
