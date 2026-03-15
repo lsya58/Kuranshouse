@@ -6,15 +6,17 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 bg-orange-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-16">お預かりの特徴</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <section id="features" className="features-section">
+      <div className="container-inner">
+        <h2 className="section-title">お預かりの特徴</h2>
+        
+        {/* Pricingと同じレスポンシブグリッドを再利用 */}
+        <div className="responsive-grid">
           {features.map((f) => (
-            <div key={f.title} className="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition text-center border border-orange-100">
-              <div className="text-5xl mb-6">{f.icon}</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{f.title}</h3>
-              <p className="text-gray-600">{f.desc}</p>
+            <div key={f.title} className="feature-card">
+              <div className="feature-icon">{f.icon}</div>
+              <h3 className="feature-card-title">{f.title}</h3>
+              <p className="feature-card-desc">{f.desc}</p>
             </div>
           ))}
         </div>
