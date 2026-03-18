@@ -11,7 +11,7 @@ export default function Contact() {
         <div className="bg-orange-50 rounded-3xl p-10 shadow-sm border border-orange-100">
           <p className="text-orange-700 font-bold mb-6">🐾 下のボタンからインスタへ移動します 🐾</p>
           <a 
-            href="https://www.instagram.com/ここにアカウント名" 
+            href="https://www.instagram.com/kurannouchi?igsh=MXM0NWVtZWxqZTVjaA==" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-500 text-white px-10 py-4 rounded-full text-xl font-bold hover:scale-105 transition-transform shadow-lg"
