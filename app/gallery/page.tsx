@@ -1,8 +1,24 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function GalleryPage() {
+  // 現在大きく表示している画像の情報を入れる状態（初期値はnull）
+  const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string, caption: string } | null>(null);
+
+  // 拡大画像が開いている間、背景のスクロールを止める
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedImage]);
+
   // --- 📸 写真データエリア ---
   // 写真をもらったら、srcの '/images/gallery/xxx.jpg' を実際のファイル名に書き換えるだけ！
   const galleryImages = [
@@ -33,7 +49,8 @@ export default function GalleryPage() {
           {galleryImages.map((image, index) => (
             <div 
               key={index} 
-              className="group relative aspect-square bg-orange-100 rounded-[32px] overflow-hidden border border-orange-200 shadow-sm hover:shadow-xl transition-all"
+              onClick={() => setSelectedImage(image)}
+              className="group relative aspect-square bg-orange-100 rounded-[32px] overflow-hidden border border-orange-200 shadow-sm hover:shadow-xl transition-all cursor-pointer"
             >
               {/* 画像本体（srcが空だとエラーになるので、実際のファイルを入れるまでダミー画像が出るようにしてあります） */}
               <Image
@@ -53,6 +70,36 @@ export default function GalleryPage() {
             </div>
           ))}
         </div>
+
+        {/* 🖼 ライトボックス（拡大画面） */}
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-300"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div 
+              className="relative max-w-5xl w-full h-[80vh] flex flex-col items-center justify-center"
+              onClick={(e) => e.stopPropagation()} // 写真部分をクリックしても閉じないようにする
+            >
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                width={1200}
+                height={800}
+                className="max-w-full max-h-full object-contain shadow-2xl"
+              />
+              <p className="mt-4 text-white text-lg font-bold bg-black/50 px-4 py-2 rounded-full">
+                {selectedImage.caption}
+              </p>
+              <button 
+                className="absolute top-4 right-4 text-white text-xl bg-white/10 hover:bg-white/20 w-12 h-12 rounded-full flex items-center justify-center transition-all"
+                onClick={() => setSelectedImage(null)} // ボタンでも閉じれるようにする
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Instagram 誘導エリア */}
         <div className="mt-24 text-center bg-white p-12 md:p-20 rounded-[50px] border border-orange-100 shadow-sm">
